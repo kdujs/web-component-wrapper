@@ -46,10 +46,10 @@ export function convertAttributeValue (value, name, { type } = {}) {
     if (value === 'true' || value === 'false') {
       return value === 'true'
     }
-    if (value === '' || value === name || value != null) {
+    if (value === '' || value === name) {
       return true
     }
-    return value
+    return value != null
   } else if (isNumber(type)) {
     const parsed = parseFloat(value, 10)
     return isNaN(parsed) ? value : parsed

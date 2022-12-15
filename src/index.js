@@ -80,13 +80,13 @@ export default function wrap (Kdu, Component) {
 
   class CustomElement extends HTMLElement {
     constructor () {
-      const self = super()
-      self.attachShadow({ mode: 'open' })
+      super()
+      this.attachShadow({ mode: 'open' })
 
-      const wrapper = self._wrapper = new Kdu({
+      const wrapper = this._wrapper = new Kdu({
         name: 'shadow-root',
-        customElement: self,
-        shadowRoot: self.shadowRoot,
+        customElement: this,
+        shadowRoot: this.shadowRoot,
         data () {
           return {
             props: {},
@@ -106,8 +106,8 @@ export default function wrap (Kdu, Component) {
         let hasChildrenChange = false
         for (let i = 0; i < mutations.length; i++) {
           const m = mutations[i]
-          if (isInitialized && m.type === 'attributes' && m.target === self) {
-            syncAttribute(self, m.attributeName)
+          if (isInitialized && m.type === 'attributes' && m.target === this) {
+            syncAttribute(this, m.attributeName)
           } else {
             hasChildrenChange = true
           }
@@ -115,11 +115,11 @@ export default function wrap (Kdu, Component) {
         if (hasChildrenChange) {
           wrapper.slotChildren = Object.freeze(toKNodes(
             wrapper.$createElement,
-            self.childNodes
+            this.childNodes
           ))
         }
       })
-      observer.observe(self, {
+      observer.observe(this, {
         childList: true,
         subtree: true,
         characterData: true,

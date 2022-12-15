@@ -1,20 +1,16 @@
 {
   "name": "@kdujs/web-component-wrapper",
-  "version": "1.3.0-rc.0",
+  "version": "1.2.0",
   "description": "wrap a kdu component as a web component.",
   "main": "dist/kdu-wc-wrapper.js",
   "unpkg": "dist/kdu-wc-wrapper.global.js",
-  "types": "types/index.d.ts",
   "files": [
-    "dist",
-    "types/*.d.ts"
+    "dist"
   ],
   "scripts": {
-    "test": "jest",
     "lint": "eslint src",
     "build": "rollup -c",
-    "prepare": "rollup -c",
-    "test:types": "tsc -p ./types/tsconfig.json"
+    "prepare": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -32,18 +28,15 @@
   "homepage": "https://github.com/kdujs/web-component-wrapper#readme",
   "devDependencies": {
     "eslint": "^4.16.0",
-    "eslint-plugin-kdu-libs": "^2.0.2",
+    "eslint-plugin-kdu-libs": "^2.1.0",
     "http-server": "^0.11.1",
-    "jest": "^22.1.4",
+    "kdu": "^2.5.24",
     "lint-staged": "^6.1.0",
     "puppeteer": "^1.0.0",
     "rollup": "^0.55.3",
-    "typescript": "^3.2.2",
-    "kdu": "^2.5.16-alpha.0",
     "yorkie": "^1.0.3"
   },
   "eslintConfig": {
-    "root": true,
     "env": {
       "browser": true
     },
