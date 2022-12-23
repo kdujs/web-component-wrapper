@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "noEmit": true,
+      "lib": [
+        "es2015",
+        "dom"
+      ]
+    },
+    "include": [
+      "./*.ts"
+    ]
+  }
+  
