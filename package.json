@@ -4,8 +4,10 @@
   "description": "wrap a kdu component as a web component.",
   "main": "dist/kdu-wc-wrapper.js",
   "unpkg": "dist/kdu-wc-wrapper.global.js",
+  "types": "types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "types/*.d.ts"
   ],
   "scripts": {
     "lint": "eslint src",
